@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Полнотекстовый поиск</title>
+</head>
+<body>
+    <h1>Полнотекстовый поиск</h1>
+    <form method="GET" action="{% url 'home' %}">
+        <input type="text" name="search_query" value="{{ search_query }}">
+        <button type="submit">Поиск</button>
+    </form>
+
+    <h2>Результаты поиска:</h2>
+    <ul>
+        {% for result in results %}
+            <li>{{ result.full_name }} - {{ result.short_name }} - {{ result.inn }}</li>
+        {% empty %}
+            <li>Ничего не найдено.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
