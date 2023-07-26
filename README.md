@@ -51,6 +51,7 @@ python -m pip install -r requirements.txt
 Заходим в консоль PostgreSQL и вводим следующие команды для создания БД и юзера: 
 
 ```sql
+psql -U postgres
 postgres=# CREATE DATABASE organizations;
 postgres=# CREATE USER "user" WITH PASSWORD 'user';
 postgres=# ALTER USER "user" SUPERUSER;
